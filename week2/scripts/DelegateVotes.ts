@@ -4,7 +4,7 @@ import * as dontenv from "dotenv";
 
 dontenv.config();
 
-const CONTRACT_ADDRESS = "0x1368B693903684711A29D88bf768bBbd430baCA1";
+const CONTRACT_ADDRESS = "0x2509D43a6eFB95DFEA7339Ac4Fa17937416695A1";
 
 function setupProvider() {
   const provider = new ethers.JsonRpcProvider(

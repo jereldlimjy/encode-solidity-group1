@@ -4,7 +4,7 @@ import * as dontenv from "dotenv";
 
 dontenv.config();
 
-const CONTRACT_ADDRESS = "0x1368B693903684711A29D88bf768bBbd430baCA1";
+const CONTRACT_ADDRESS = "0x2509D43a6eFB95DFEA7339Ac4Fa17937416695A1";
 
 function setupProvider() {
   const provider = new ethers.JsonRpcProvider(
@@ -16,11 +16,12 @@ function setupProvider() {
 async function main() {
   try {
     const args = process.argv.slice(2);
-    const proposalIndex = Number(args[0]);
+    const proposalNum = Number(args[0]);
 
-    if (isNaN(proposalIndex)) {
+    if (isNaN(proposalNum) || proposalNum === 0) {
       throw new Error("Invalid arguments provided");
     }
+    const proposalIndex = proposalNum - 1;
     const provider = setupProvider();
     const wallet = new ethers.Wallet(process.env.PRIVATE_KEY ?? "", provider);
 
@@ -29,7 +30,12 @@ async function main() {
 
     const tx = await ballotContract.vote(proposalIndex);
     await tx.wait();
-    console.log(`Vote cast for proposal ${proposalIndex}`);
+    const proposal = await ballotContract.proposals(proposalIndex);
+
+    console.log(
+      `Vote cast for proposal: ${ethers.decodeBytes32String(proposal.name)}`
+    );
+    console.log(`New vote count: ${proposal.voteCount}`);
   } catch (err) {
     console.error(`Failed to cast vote:`, (err as Error).message);
   }
