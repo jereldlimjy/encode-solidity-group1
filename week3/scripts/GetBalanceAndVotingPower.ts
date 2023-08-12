@@ -14,7 +14,7 @@ const tokenizedBallotContractAddress =
 async function main() {
   try {
     const args = process.argv.slice(2);
-    const address = args[0];
+    const address = args[0] ?? "";
 
     if (!ethers.isAddress(address)) {
       throw new Error("Invalid address provided");
