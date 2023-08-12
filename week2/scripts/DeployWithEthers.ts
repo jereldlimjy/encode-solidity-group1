@@ -1,8 +1,8 @@
 import { ethers } from "ethers";
 import { Ballot__factory } from "../typechain-types";
-import * as dontenv from "dotenv";
+import * as dotenv from "dotenv";
 
-dontenv.config();
+dotenv.config();
 
 function setupProvider() {
   const provider = new ethers.JsonRpcProvider(
