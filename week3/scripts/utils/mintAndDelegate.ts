@@ -1,4 +1,4 @@
-import { ethers, keccak256 } from "ethers";
+import { ethers } from "ethers";
 import { VoteToken } from "../../typechain-types";
 
 const MINT_VALUE = ethers.parseUnits("1");

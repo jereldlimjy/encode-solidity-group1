@@ -4,8 +4,8 @@ import {
   TokenizedBallot__factory,
 } from "../typechain-types";
 import * as dotenv from "dotenv";
-import getBalanceAndVotingPower from "./utils/getBalanceAndVotingPower";
 import mintAndDelegate from "./utils/mintAndDelegate";
+import setupProvider from "./utils/setupProvider";
 
 dotenv.config();
 
@@ -20,13 +20,6 @@ const WALLETS = [
     privateKey: process.env.PRIVATE_KEY_2 ?? "",
   },
 ];
-
-function setupProvider() {
-  const provider = new ethers.JsonRpcProvider(
-    process.env.RPC_ENDPOINT_URL ?? ""
-  );
-  return provider;
-}
 
 async function main() {
   const provider = setupProvider();
@@ -57,12 +50,6 @@ async function main() {
 
     const currWallet = new ethers.Wallet(wallet.privateKey, provider);
     await mintAndDelegate(voteTokenContract, currWallet);
-  }
-
-  // Check balance and voting power
-  console.log("\nChecking balance and voting power...");
-  for (const wallet of WALLETS) {
-    await getBalanceAndVotingPower(voteTokenContract, wallet.address);
   }
 
   // Get block number for TokenizedBallot
