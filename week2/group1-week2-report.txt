@@ -1,0 +1,41 @@
+Fetched all decoded logs. Done in 12.915247900001704 s.
+
+Group member list:
+┌─────────┬──────────────────────────────────────────────┬─────────────────┬────────────────────┐
+│ (index) │                   address                    │      name       │     discordId      │
+├─────────┼──────────────────────────────────────────────┼─────────────────┼────────────────────┤
+│    0    │ '0x7b7e25c974b7ca1a8805a2c31c51405fe256982b' │ 'zen_deployer'  │      'zen123'      │
+│    1    │ '0x46baa3e0dd51ea3c154ba2ffee570efdbebafe10' │   'zen_test1'   │      'zen123'      │
+│    2    │ '0x12ef0c418644abdaf92974c2601896fb2725383e' │   'zen_test2'   │      'zen123'      │
+│    3    │ '0xce569448d4ae9f5ad4717c896c897afab88568f5' │   'zen_test3'   │      'zen123'      │
+│    4    │ '0x61e00cecf6c139bfb9100b4a1df0322988c5b7f4' │  'arcd_test1'   │    'arcosdawn'     │
+│    5    │ '0x4586b4f27a6a5db34f4c020b8604170e128f42a6' │  'arcd_test2'   │    'arcosdawn'     │
+│    6    │ '0xf2cdb68fb07c0a8661df1abdd9a8c6463c207e3f' │ 'Yongjun Zhang' │    'allenazzup'    │
+│    7    │ '0xe8ba93f3caa61ce2cd0d3d52a22365f96a97e26d' │ 'jereld_test1'  │ 'jereldlimjy#3450' │
+│    8    │ '0x96f3a28836454108f542d8be888625375032abd5' │ 'jereld_test2'  │ 'jereldlimjy#3450' │
+└─────────┴──────────────────────────────────────────────┴─────────────────┴────────────────────┘
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+
+EventLogs for contract 0x2509D43a6eFB95DFEA7339Ac4Fa17937416695A1:
+┌─────────┬─────────────────┬─────────────────┬─────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────────┬────────┐
+│ (index) │     sender      │      event      │                    args                     │                               txnHash                                │ logIdx │
+├─────────┼─────────────────┼─────────────────┼─────────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────┼────────┤
+│    0    │ 'zen_deployer'  │ 'GiveVoteRight' │         [ 'voter: Yongjun Zhang' ]          │ '0xace91ce4d9c764afc0035d7a5d2710447da3de8a7482d3cad996439b5cd11557' │   15   │
+│    1    │ 'zen_deployer'  │     'Vote'      │ [ 'voter: zen_deployer', 'proposalId: 0' ]  │ '0x3d5aaae6876fa06f402dda2dded03ff3afd06191c725f3290453d692c77ccadb' │   17   │
+│    2    │   'zen_test2'   │   'Delegate'    │  [ 'sender: zen_test2', 'to: arcd_test1' ]  │ '0x097fe89dd800a6b918094fe65da4e915c825ae6dbeae95e41cc0411aff915aa4' │   27   │
+│    3    │   'zen_test1'   │     'Vote'      │   [ 'voter: zen_test1', 'proposalId: 0' ]   │ '0x5429d872c32430966ddd390b97c7c4f5faa135132f7ca7aaa5d45f57c3d0cbb1' │   27   │
+│    4    │ 'zen_deployer'  │ 'GiveVoteRight' │           [ 'voter: arcd_test2' ]           │ '0x57ccac6a93931698214df86cccbd21a4535746eebcd84d913eb3baf66235f182' │   31   │
+│    5    │ 'zen_deployer'  │ 'GiveVoteRight' │           [ 'voter: arcd_test1' ]           │ '0x9a80d29dd97c97337fffb26ce131a77f678250ddee75b1d136f54476888f04fb' │   31   │
+│    6    │ 'zen_deployer'  │ 'GiveVoteRight' │           [ 'voter: zen_test1' ]            │ '0x4eabde8be2ac19c96a9b76e553017b97025cdc9eb1de65501b80181747d281ab' │   32   │
+│    7    │ 'jereld_test1'  │     'Vote'      │ [ 'voter: jereld_test1', 'proposalId: 1' ]  │ '0x1daefcdc9b9a5a02f0165f5ee5c8f4434b3b9827c4982f258128c0fe6863054d' │   33   │
+│    8    │ 'zen_deployer'  │ 'GiveVoteRight' │          [ 'voter: jereld_test1' ]          │ '0xd551318919bc39ebe0f3d4d22371729922ef311ce1741c71a2deb56c3516cd09' │   33   │
+│    9    │ 'jereld_test2'  │     'Vote'      │ [ 'voter: jereld_test2', 'proposalId: 1' ]  │ '0x09aea28476282d4bdcfeda7cb98af925110f7e0c882eaab012b656f217861227' │   48   │
+│   10    │  'arcd_test1'   │     'Vote'      │  [ 'voter: arcd_test1', 'proposalId: 2' ]   │ '0xee6ce879758e5d94f8897ce4146f05383e0dff11f0030884aae083300f0fd1f8' │   68   │
+│   11    │ 'Yongjun Zhang' │     'Vote'      │ [ 'voter: Yongjun Zhang', 'proposalId: 1' ] │ '0xae1cbf83d58197cff7ff4c67e9c1e5cf3a8a2caae61a912dde909b894a931a09' │   74   │
+│   12    │ 'zen_deployer'  │ 'GiveVoteRight' │           [ 'voter: zen_test2' ]            │ '0x726bacaf7b5ec4bb0849d2b47b6cbaf41b5f2eeedf341c71883d2495650c1f4d' │   83   │
+│   13    │  'arcd_test2'   │   'Delegate'    │  [ 'sender: arcd_test2', 'to: zen_test3' ]  │ '0x61222754484a6264c78d42583f5196a6839a06dbfd374736a9c50727158bdaf5' │   96   │
+│   14    │ 'zen_deployer'  │ 'GiveVoteRight' │           [ 'voter: zen_test3' ]            │ '0xe029769a7ccefb2e560095d8e1e3aa4528dd28be8aa32c94b1de9f39c21e9237' │   97   │
+│   15    │   'zen_test3'   │     'Vote'      │   [ 'voter: zen_test3', 'proposalId: 1' ]   │ '0xa91ff392cca5519c0397b4b294d28a943d90389126ae346251a160e65d90fecd' │  114   │
+│   16    │ 'zen_deployer'  │ 'GiveVoteRight' │          [ 'voter: jereld_test2' ]          │ '0x0ff965a1b8892cead3e59a6ae68b19de2e1a3b4575fbc418e5030d2e7891c6c4' │  125   │
+└─────────┴─────────────────┴─────────────────┴─────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────┴────────┘
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
