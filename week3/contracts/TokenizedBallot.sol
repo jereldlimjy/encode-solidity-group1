@@ -16,6 +16,9 @@ contract TokenizedBallot {
     uint256 public targetBlockNumber;
     mapping(address => uint256) public votingPowerSpent;
 
+    // Events
+    event Vote(address indexed voter, uint proposalId);
+
     constructor(
         bytes32[] memory proposalNames,
         address _tokenContract,
@@ -35,6 +38,8 @@ contract TokenizedBallot {
         );
         votingPowerSpent[msg.sender] += amount;
         proposals[proposal].voteCount += amount;
+
+        emit Vote(msg.sender, proposal);
     }
 
     function votingPower(address account) public view returns (uint256) {

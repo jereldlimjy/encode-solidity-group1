@@ -7,9 +7,9 @@ import {
 import { ethers } from "ethers";
 import setupProvider from "./utils/setupProvider";
 
-const voteTokenContractAddress = "0x678AC7A39695fb0Df0F081a140A2731782FEb353";
+const voteTokenContractAddress = "0xf4b552EFdE4a1813C3AF9a8129a6DB596E509A72";
 const tokenizedBallotContractAddress =
-  "0xAD38F55f1ebA80116a2FdF1B3e27caE4BA86202D";
+  "0x4A185F68F11DDac1C4209421e65560c47fe3b637";
 
 async function main() {
   try {
@@ -22,7 +22,7 @@ async function main() {
 
     console.log("\nChecking balance and voting power...");
     const provider = setupProvider();
-    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY ?? "", provider);
+    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY_1 ?? "", provider);
 
     const voteTokenFactory = new VoteToken__factory(wallet);
     const voteTokenContract = voteTokenFactory.attach(

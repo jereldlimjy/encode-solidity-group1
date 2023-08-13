@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import setupProvider from "./utils/setupProvider";
 
 const tokenizedBallotContractAddress =
-  "0xAD38F55f1ebA80116a2FdF1B3e27caE4BA86202D";
+  "0x4A185F68F11DDac1C4209421e65560c47fe3b637";
 
 async function main() {
   try {
@@ -17,7 +17,7 @@ async function main() {
 
     console.log("Casting votes...");
     const provider = setupProvider();
-    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY_2 ?? "", provider);
+    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY_4 ?? "", provider);
 
     const tokenizedBallotFactory = new TokenizedBallot__factory(wallet);
     const tokenizedBallotContract = tokenizedBallotFactory.attach(

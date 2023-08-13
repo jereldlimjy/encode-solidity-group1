@@ -9,7 +9,7 @@ async function main() {
     const contractAddress = args[0] ?? "";
 
     const provider = setupProvider();
-    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY ?? "", provider);
+    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY_1 ?? "", provider);
 
     const tokenizedBallotFactory = new TokenizedBallot__factory(wallet);
     const tokenizedBallotContract = tokenizedBallotFactory.attach(

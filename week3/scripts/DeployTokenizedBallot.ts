@@ -9,21 +9,21 @@ import setupProvider from "./utils/setupProvider";
 
 dotenv.config();
 
-const PROPOSALS = ["Pikachu", "Squirtle", "Bulbasaur", "Charmander"];
+const PROPOSALS = ["One Piece", "Naruto", "Bleach", "One-Punch Man"];
 const WALLETS = [
   {
-    address: "0xE8bA93f3Caa61CE2cd0D3d52A22365f96A97e26D",
-    privateKey: process.env.PRIVATE_KEY ?? "",
+    address: "0x7B7E25c974B7Ca1a8805a2C31C51405FE256982B",
+    privateKey: process.env.PRIVATE_KEY_1 ?? "",
   },
   {
-    address: "0x8B151eBF6Ca9D3b5Bfdd1Eeb0b4F3e792B5061D9",
+    address: "0x46Baa3E0dd51eA3c154ba2ffEe570EfDbEbAFe10",
     privateKey: process.env.PRIVATE_KEY_2 ?? "",
   },
 ];
 
 async function main() {
   const provider = setupProvider();
-  const wallet = new ethers.Wallet(process.env.PRIVATE_KEY ?? "", provider);
+  const wallet = new ethers.Wallet(process.env.PRIVATE_KEY_1 ?? "", provider);
 
   // Deploy VoteToken contract
   console.log("Deploying VoteToken contract...");
