@@ -1,0 +1,120 @@
+Group member list:
+┌─────────┬──────────────────────────────────────────────┬────────────────┬───────────────┐
+│ (index) │                   address                    │      name      │   discordId   │
+├─────────┼──────────────────────────────────────────────┼────────────────┼───────────────┤
+│    0    │ '0x4586b4f27a6a5db34f4c020b8604170e128f42a6' │  'arcd_test1'  │  'arcosdawn'  │
+│    1    │ '0x7b7e25c974b7ca1a8805a2c31c51405fe256982b' │ 'zen_deployer' │   'zen123'    │
+│    2    │ '0xce569448d4ae9f5ad4717c896c897afab88568f5' │  'zen_test3'   │   'zen123'    │
+│    3    │ '0xe8ba93f3caa61ce2cd0d3d52a22365f96a97e26d' │ 'jereld_test1' │ 'jereldlimjy' │
+│    4    │ '0x8b151ebf6ca9d3b5bfdd1eeb0b4f3e792b5061d9' │ 'jereld_test3' │ 'jereldlimjy' │
+└─────────┴──────────────────────────────────────────────┴────────────────┴───────────────┘
+[object Object],[object Object],[object Object],[object Object],[object Object]
+
+EventLogs for contract 0x706A384853570AF0a5624C4AA157750570288D1C (TokenizedBallot):
+┌─────────┬────────────────┬────────┬────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────────┬────────┐
+│ (index) │     sender     │ event  │                    args                    │                               txnHash                                │ logIdx │
+├─────────┼────────────────┼────────┼────────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────┼────────┤
+│    0    │ 'zen_deployer' │ 'Vote' │ [ 'voter: zen_deployer', 'proposalId: 3' ] │ '0xb84a3bcf2fd49b53039f1e0c0a2dd2bbc8e4a21dd4f8dd9dd6159abf76fdaad4' │   49   │
+│    1    │  'arcd_test1'  │ 'Vote' │  [ 'voter: arcd_test1', 'proposalId: 0' ]  │ '0x3261e0fe5493b2e33afeaaa65571ad808faa46fd50e0c6b464f67e16227bb68d' │   67   │
+│    2    │  'zen_test3'   │ 'Vote' │  [ 'voter: zen_test3', 'proposalId: 3' ]   │ '0xab485143f7fb943fe960b97b8554910876fa4b338ef6f30c726268fb71a5efec' │   76   │
+│    3    │ 'jereld_test1' │ 'Vote' │ [ 'voter: jereld_test1', 'proposalId: 1' ] │ '0x08b694774746c6ce751e6c596f00a9b4216c2d59616f1e117920f04cd303ec69' │  100   │
+│    4    │ 'jereld_test3' │ 'Vote' │ [ 'voter: jereld_test3', 'proposalId: 3' ] │ '0x7d2f730e4248b0e9e5b4300d27ed0988945e2e2f6c06b6feae32e7eff5146bdb' │  112   │
+│    5    │  'zen_test3'   │ 'Vote' │  [ 'voter: zen_test3', 'proposalId: 2' ]   │ '0x632ab281582f5080003526a2ab0adf6e341b20a2e003aecbe5a7699595422e64' │  162   │
+└─────────┴────────────────┴────────┴────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────┴────────┘
+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+
+---
+
+Group member list:
+┌─────────┬──────────────────────────────────────────────────────────────────────┬─────────────────┬────────────────────┐
+│ (index) │                               address                                │      name       │     discordId      │
+├─────────┼──────────────────────────────────────────────────────────────────────┼─────────────────┼────────────────────┤
+│    0    │             '0x7b7e25c974b7ca1a8805a2c31c51405fe256982b'             │ 'zen_deployer'  │      'zen123'      │
+│    1    │             '0x46baa3e0dd51ea3c154ba2ffee570efdbebafe10'             │   'zen_test1'   │      'zen123'      │
+│    2    │             '0x12ef0c418644abdaf92974c2601896fb2725383e'             │   'zen_test2'   │      'zen123'      │
+│    3    │             '0xce569448d4ae9f5ad4717c896c897afab88568f5'             │   'zen_test3'   │      'zen123'      │
+│    4    │             '0x61e00cecf6c139bfb9100b4a1df0322988c5b7f4'             │  'arcd_test1'   │    'arcosdawn'     │
+│    5    │             '0x4586b4f27a6a5db34f4c020b8604170e128f42a6'             │  'arcd_test2'   │    'arcosdawn'     │
+│    6    │             '0xf2cdb68fb07c0a8661df1abdd9a8c6463c207e3f'             │ 'Yongjun Zhang' │    'allenazzup'    │
+│    7    │             '0xe8ba93f3caa61ce2cd0d3d52a22365f96a97e26d'             │ 'jereld_test1'  │ 'jereldlimjy#3450' │
+│    8    │             '0x96f3a28836454108f542d8be888625375032abd5'             │ 'jereld_test2'  │ 'jereldlimjy#3450' │
+│    9    │             '0x8b151ebf6ca9d3b5bfdd1eeb0b4f3e792b5061d9'             │ 'jereld_test3'  │ 'jereldlimjy#3450' │
+│   10    │             '0x0000000000000000000000000000000000000000'             │ 'null address'  │       'null'       │
+│   11    │ '0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6' │  'minter_role'  │   'minter_role'    │
+│   12    │ '0x0000000000000000000000000000000000000000000000000000000000000000' │  'minter_dev'   │    'minter_dev'    │
+└─────────┴──────────────────────────────────────────────────────────────────────┴─────────────────┴────────────────────┘
+
+EventLogs for contract 0xf4b552EFdE4a1813C3AF9a8129a6DB596E509A72 (VoteToken):
+┌─────────┬────────────────┬────────────────────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────────┬────────┐
+│ (index) │     sender     │         event          │                                                   args                                                   │                               txnHash                                │ logIdx │
+├─────────┼────────────────┼────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────┼──────────────────────────────────────────────────────────────────────┼────────┤
+│    0    │  'arcd_test2'  │   'DelegateChanged'    │            [ 'delegator: arcd_test2', 'fromDelegate: arcd_test2', 'toDelegate: arcd_test1' ]             │ '0xaada6c8e6e195c2d3c394d7d6071a842226b90e72596b29b1cd3eee388e8ee61' │   9    │
+│    1    │  'arcd_test2'  │ 'DelegateVotesChanged' │           [ 'delegate: arcd_test2', 'previousBalance: 22000000000000000000', 'newBalance: 0' ]           │ '0xaada6c8e6e195c2d3c394d7d6071a842226b90e72596b29b1cd3eee388e8ee61' │   10   │
+│    2    │  'arcd_test2'  │ 'DelegateVotesChanged' │           [ 'delegate: arcd_test1', 'previousBalance: 0', 'newBalance: 22000000000000000000' ]           │ '0xaada6c8e6e195c2d3c394d7d6071a842226b90e72596b29b1cd3eee388e8ee61' │   11   │
+│    3    │ 'jereld_test1' │       'Transfer'       │                 [ 'from: null address', 'to: zen_test2', 'value: 2000000000000000000' ]                  │ '0x745d1a66421ffd6b6589b863980bd1b00b80e225b15078092a08a279d53ae970' │   12   │
+│    4    │ 'jereld_test1' │     'RoleGranted'      │                  [ 'role: minter_role', 'account: arcd_test1', 'sender: jereld_test1' ]                  │ '0x08fd9ea7600b1ae89269cbcd6b4676d46d3bf91aafb6ae62e0c56491b021c3ec' │   13   │
+│    5    │  'zen_test2'   │   'DelegateChanged'    │            [ 'delegator: zen_test2', 'fromDelegate: null address', 'toDelegate: zen_test1' ]             │ '0xa1dbcac62241a5d13bbe2232b1110f71c3982ce0c6799427b7cded9ffaae2c6f' │   16   │
+│    6    │  'zen_test2'   │ 'DelegateVotesChanged' │   [ 'delegate: zen_test1', 'previousBalance: 2000000000000000000', 'newBalance: 4000000000000000000' ]   │ '0xa1dbcac62241a5d13bbe2232b1110f71c3982ce0c6799427b7cded9ffaae2c6f' │   17   │
+│    7    │  'zen_test1'   │   'DelegateChanged'    │            [ 'delegator: zen_test1', 'fromDelegate: null address', 'toDelegate: zen_test1' ]             │ '0xac7e62644d848aad5537cdfe87c6980d9b6aa6326e6c0c29acb5ef3a28efd74b' │   18   │
+│    8    │  'zen_test1'   │ 'DelegateVotesChanged' │            [ 'delegate: zen_test1', 'previousBalance: 0', 'newBalance: 2000000000000000000' ]            │ '0xac7e62644d848aad5537cdfe87c6980d9b6aa6326e6c0c29acb5ef3a28efd74b' │   19   │
+│    9    │  'zen_test3'   │       'Transfer'       │                 [ 'from: null address', 'to: zen_test3', 'value: 5000000000000000000' ]                  │ '0x34479ed1639643d1d0b2482e89becd3cbd7754a7e154bfe79055261b30ea948e' │   22   │
+│   10    │  'zen_test3'   │ 'DelegateVotesChanged' │ [ 'delegate: zen_deployer', 'previousBalance: 7000000000000000000', 'newBalance: 12000000000000000000' ] │ '0x34479ed1639643d1d0b2482e89becd3cbd7754a7e154bfe79055261b30ea948e' │   23   │
+│   11    │ 'jereld_test1' │       'Transfer'       │                 [ 'from: null address', 'to: zen_test3', 'value: 2000000000000000000' ]                  │ '0x6c6821767ba47d21711f6f6a4454c7a333bd66c434f3dfb1de20c2511f8616bc' │   29   │
+│   12    │  'zen_test2'   │   'DelegateChanged'    │              [ 'delegator: zen_test2', 'fromDelegate: zen_test1', 'toDelegate: zen_test3' ]              │ '0x050b232e449a4a0db66e0bdeef1b3f9ff2fc3b5a52bd6fa2d5c4d842759a08be' │   30   │
+│   13    │  'zen_test2'   │ 'DelegateVotesChanged' │            [ 'delegate: zen_test1', 'previousBalance: 2000000000000000000', 'newBalance: 0' ]            │ '0x050b232e449a4a0db66e0bdeef1b3f9ff2fc3b5a52bd6fa2d5c4d842759a08be' │   31   │
+│   14    │  'zen_test2'   │ 'DelegateVotesChanged' │            [ 'delegate: zen_test3', 'previousBalance: 0', 'newBalance: 2000000000000000000' ]            │ '0x050b232e449a4a0db66e0bdeef1b3f9ff2fc3b5a52bd6fa2d5c4d842759a08be' │   32   │
+│   15    │ 'jereld_test1' │     'RoleGranted'      │                  [ 'role: minter_role', 'account: zen_test1', 'sender: jereld_test1' ]                   │ '0xcc222ed898373d8ab6a19a4e8cfe546ca9fe57f7009fe8556b4bf45c4dae99cc' │   33   │
+│   16    │ 'jereld_test1' │     'RoleGranted'      │                  [ 'role: minter_role', 'account: arcd_test2', 'sender: jereld_test1' ]                  │ '0x3481737e6abd9852dbc8d8048bebacb7be18f6c0738dcdcb64cc70067a58d85b' │   36   │
+│   17    │ 'jereld_test1' │     'RoleGranted'      │                 [ 'role: minter_role', 'account: jereld_test3', 'sender: jereld_test1' ]                 │ '0xcc4e1977696d7a00c5fbf5347ed4fce69ae7e343f51a56d8be17c9a0d254ebcc' │   37   │
+│   18    │ 'jereld_test1' │       'Transfer'       │                 [ 'from: null address', 'to: zen_test1', 'value: 2000000000000000000' ]                  │ '0x16ace6eb47a37742e518d189a51d707e245c6419c42f764fde2266d3fe416880' │   38   │
+│   19    │  'zen_test3'   │   'DelegateChanged'    │           [ 'delegator: zen_test3', 'fromDelegate: null address', 'toDelegate: zen_deployer' ]           │ '0x7a491af861fd372630a87b4593ad128b27732432d579f26c0a89ca2d32b5fcd9' │   39   │
+│   20    │  'zen_test3'   │ 'DelegateVotesChanged' │ [ 'delegate: zen_deployer', 'previousBalance: 3000000000000000000', 'newBalance: 5000000000000000000' ]  │ '0x7a491af861fd372630a87b4593ad128b27732432d579f26c0a89ca2d32b5fcd9' │   40   │
+│   21    │ 'jereld_test1' │     'RoleGranted'      │                 [ 'role: minter_dev', 'account: jereld_test1', 'sender: jereld_test1' ]                  │ '0x462e59348339721e8197a321bfdd0e8007df39315c6295dca6384e80b9c7c7ce' │   42   │
+│   22    │ 'jereld_test1' │     'RoleGranted'      │                 [ 'role: minter_role', 'account: zen_deployer', 'sender: jereld_test1' ]                 │ '0xb5a2bb414b28e9830ac330bf584c2496a03cd587df6df1b1baeea168aef7e65f' │   43   │
+│   23    │ 'jereld_test1' │     'RoleGranted'      │                 [ 'role: minter_role', 'account: jereld_test1', 'sender: jereld_test1' ]                 │ '0x462e59348339721e8197a321bfdd0e8007df39315c6295dca6384e80b9c7c7ce' │   43   │
+│   24    │ 'jereld_test1' │       'Transfer'       │                [ 'from: null address', 'to: jereld_test3', 'value: 2000000000000000000' ]                │ '0xb0c93c5992d2a2fbdb381ce4408a200ab567acc00c2151404c8057c5626c1875' │   44   │
+│   25    │ 'zen_deployer' │       'Transfer'       │                [ 'from: null address', 'to: zen_deployer', 'value: 1000000000000000000' ]                │ '0x68a79d02985126fbc88c7e380b004ab35a4cd089b3cc627dfcdff783412ebe0f' │   45   │
+│   26    │ 'jereld_test1' │       'Transfer'       │                [ 'from: null address', 'to: zen_deployer', 'value: 2000000000000000000' ]                │ '0x441be9e50a2588fe8d22355d58045955ee81f5c428442f6a726010385c35e3b5' │   47   │
+│   27    │ 'jereld_test1' │       'Transfer'       │                 [ 'from: null address', 'to: arcd_test1', 'value: 2000000000000000000' ]                 │ '0xe89f9f548746a70674a0759a73c1d80e3f7726ef4b28cbffca2ffe3db979d305' │   49   │
+│   28    │  'arcd_test2'  │   'DelegateChanged'    │            [ 'delegator: arcd_test2', 'fromDelegate: arcd_test2', 'toDelegate: arcd_test2' ]             │ '0x43925407fe06fc2d474887b814de8823f48159aa7eba3f4a0631b0a949bf3a55' │   50   │
+│   29    │ 'jereld_test1' │       'Transfer'       │                 [ 'from: null address', 'to: arcd_test2', 'value: 2000000000000000000' ]                 │ '0xdd97494a56961d9a057b62f39ba3c92a53eee2d9bb475e7f7475bda02e379acd' │   50   │
+│   30    │ 'jereld_test1' │   'DelegateChanged'    │         [ 'delegator: jereld_test1', 'fromDelegate: null address', 'toDelegate: jereld_test1' ]          │ '0x2defca9ae1e4840741958703320b750d8ce288e5de19fb833fbc331a1d577b71' │   58   │
+│   31    │  'zen_test1'   │   'DelegateChanged'    │            [ 'delegator: zen_test1', 'fromDelegate: zen_test1', 'toDelegate: zen_deployer' ]             │ '0xa462c12abd957009dc18bfc8dfc0588525e422079a26c752e498dc3613dbc88a' │   58   │
+│   32    │ 'jereld_test1' │ 'DelegateVotesChanged' │          [ 'delegate: jereld_test1', 'previousBalance: 0', 'newBalance: 2000000000000000000' ]           │ '0x2defca9ae1e4840741958703320b750d8ce288e5de19fb833fbc331a1d577b71' │   59   │
+│   33    │  'zen_test1'   │ 'DelegateVotesChanged' │   [ 'delegate: zen_test1', 'previousBalance: 4000000000000000000', 'newBalance: 2000000000000000000' ]   │ '0xa462c12abd957009dc18bfc8dfc0588525e422079a26c752e498dc3613dbc88a' │   59   │
+│   34    │  'zen_test1'   │ 'DelegateVotesChanged' │ [ 'delegate: zen_deployer', 'previousBalance: 5000000000000000000', 'newBalance: 7000000000000000000' ]  │ '0xa462c12abd957009dc18bfc8dfc0588525e422079a26c752e498dc3613dbc88a' │   60   │
+│   35    │ 'jereld_test3' │   'DelegateChanged'    │         [ 'delegator: jereld_test3', 'fromDelegate: null address', 'toDelegate: jereld_test3' ]          │ '0xc00830452acb0607df1eac621c67876714397f6c2edd9feebc1a5539653c9af2' │   62   │
+│   36    │ 'jereld_test3' │ 'DelegateVotesChanged' │          [ 'delegate: jereld_test3', 'previousBalance: 0', 'newBalance: 2000000000000000000' ]           │ '0xc00830452acb0607df1eac621c67876714397f6c2edd9feebc1a5539653c9af2' │   63   │
+│   37    │ 'zen_deployer' │   'DelegateChanged'    │         [ 'delegator: zen_deployer', 'fromDelegate: zen_deployer', 'toDelegate: zen_deployer' ]          │ '0xdf1ed3a0e6fd1ecdcbd4f2f3a9b1d83b61a4ab8cefbc6a753ccb059cd7d8d595' │   64   │
+│   38    │ 'jereld_test1' │       'Transfer'       │                [ 'from: null address', 'to: jereld_test1', 'value: 2000000000000000000' ]                │ '0x55a0444b9f7f99b4836cf51425163fde9b1d93f57d4a25f09c9affdcb0baef06' │   67   │
+│   39    │  'zen_test3'   │   'DelegateChanged'    │            [ 'delegator: zen_test3', 'fromDelegate: zen_test2', 'toDelegate: zen_deployer' ]             │ '0x030daea474fcf21da135369fa3a350558322e454d87965c1c37d98ba57ca4d82' │   69   │
+│   40    │  'zen_test3'   │ 'DelegateVotesChanged' │            [ 'delegate: zen_test2', 'previousBalance: 7000000000000000000', 'newBalance: 0' ]            │ '0x030daea474fcf21da135369fa3a350558322e454d87965c1c37d98ba57ca4d82' │   70   │
+│   41    │  'zen_test3'   │ 'DelegateVotesChanged' │ [ 'delegate: zen_deployer', 'previousBalance: 7000000000000000000', 'newBalance: 14000000000000000000' ] │ '0x030daea474fcf21da135369fa3a350558322e454d87965c1c37d98ba57ca4d82' │   71   │
+│   42    │  'arcd_test2'  │   'DelegateChanged'    │            [ 'delegator: arcd_test2', 'fromDelegate: arcd_test1', 'toDelegate: arcd_test1' ]             │ '0xad26dc5467b673d3a37b0c916d811b755cc3d9db2028786f5a92bb8c4ecb1ae8' │   73   │
+│   43    │ 'jereld_test1' │     'RoleGranted'      │                  [ 'role: minter_role', 'account: zen_test2', 'sender: jereld_test1' ]                   │ '0x3892d99a8d095f798e6c32fb1bebd5caa2b671cdc3ad17db7599db728acf538a' │   74   │
+│   44    │  'zen_test3'   │   'DelegateChanged'    │            [ 'delegator: zen_test3', 'fromDelegate: zen_deployer', 'toDelegate: zen_test2' ]             │ '0x3cb7bf3462f363e2c55325833dcde1d0be9a39d923c87d2794394e7984430d5d' │   76   │
+│   45    │  'zen_test3'   │ 'DelegateVotesChanged' │ [ 'delegate: zen_deployer', 'previousBalance: 12000000000000000000', 'newBalance: 5000000000000000000' ] │ '0x3cb7bf3462f363e2c55325833dcde1d0be9a39d923c87d2794394e7984430d5d' │   77   │
+│   46    │  'zen_test3'   │ 'DelegateVotesChanged' │            [ 'delegate: zen_test2', 'previousBalance: 0', 'newBalance: 7000000000000000000' ]            │ '0x3cb7bf3462f363e2c55325833dcde1d0be9a39d923c87d2794394e7984430d5d' │   78   │
+│   47    │  'arcd_test2'  │   'DelegateChanged'    │            [ 'delegator: arcd_test2', 'fromDelegate: arcd_test2', 'toDelegate: arcd_test2' ]             │ '0x586686f5ee4f7ecc2bc85a897dd8c0d8942941c11d7385348bee90508bf51268' │   80   │
+│   48    │  'arcd_test2'  │   'DelegateChanged'    │            [ 'delegator: arcd_test2', 'fromDelegate: arcd_test2', 'toDelegate: arcd_test2' ]             │ '0x4d3512ec4b0741fdea552a4f8abe399cf9a380bdc7977f73db624d019a4ab0c9' │   81   │
+│   49    │ 'zen_deployer' │   'DelegateChanged'    │         [ 'delegator: zen_deployer', 'fromDelegate: null address', 'toDelegate: zen_deployer' ]          │ '0x56c82257959d0266621cb74196b7aad39e64877cd6b5d177326450f3810121ed' │   87   │
+│   50    │ 'zen_deployer' │ 'DelegateVotesChanged' │          [ 'delegate: zen_deployer', 'previousBalance: 0', 'newBalance: 3000000000000000000' ]           │ '0x56c82257959d0266621cb74196b7aad39e64877cd6b5d177326450f3810121ed' │   88   │
+│   51    │  'arcd_test2'  │   'DelegateChanged'    │           [ 'delegator: arcd_test2', 'fromDelegate: null address', 'toDelegate: arcd_test1' ]            │ '0xe31befc00091a8776d89af672da93e70ee83ef332466fb7355fe5d3c6412fb7a' │   96   │
+│   52    │  'arcd_test2'  │   'DelegateChanged'    │            [ 'delegator: arcd_test2', 'fromDelegate: arcd_test2', 'toDelegate: arcd_test2' ]             │ '0xbd065d1caec9baf26d39a2c0683938510f6b12e9c22f83a6a312d96ba729b425' │   97   │
+│   53    │  'arcd_test2'  │ 'DelegateVotesChanged' │           [ 'delegate: arcd_test1', 'previousBalance: 0', 'newBalance: 2000000000000000000' ]            │ '0xe31befc00091a8776d89af672da93e70ee83ef332466fb7355fe5d3c6412fb7a' │   97   │
+│   54    │ 'zen_deployer' │       'Transfer'       │                [ 'from: null address', 'to: zen_deployer', 'value: 2000000000000000000' ]                │ '0xb348bf8bbdd9238b35cbd8a400ef9341d5659c9b4e415773092b78d311d1a517' │   98   │
+│   55    │ 'zen_deployer' │ 'DelegateVotesChanged' │ [ 'delegate: zen_deployer', 'previousBalance: 5000000000000000000', 'newBalance: 7000000000000000000' ]  │ '0xb348bf8bbdd9238b35cbd8a400ef9341d5659c9b4e415773092b78d311d1a517' │   99   │
+│   56    │ 'jereld_test1' │     'RoleGranted'      │                  [ 'role: minter_role', 'account: zen_test3', 'sender: jereld_test1' ]                   │ '0xee3c83988910eb5c9d86bd945208fe1731b6aa6808b30914e589aaf2f9e7e475' │  111   │
+│   57    │  'arcd_test2'  │   'DelegateChanged'    │            [ 'delegator: arcd_test2', 'fromDelegate: arcd_test2', 'toDelegate: arcd_test2' ]             │ '0xdbd4f94c7ac3f41adc558081074f8f6f234e79aa70694468b740c9b4e11fe44b' │  137   │
+│   58    │  'arcd_test2'  │   'DelegateChanged'    │            [ 'delegator: arcd_test2', 'fromDelegate: arcd_test1', 'toDelegate: arcd_test2' ]             │ '0xa3deb2ab206952d10696a41fd46f542589e56b6b366c24f469883006044288a4' │  150   │
+│   59    │  'arcd_test2'  │ 'DelegateVotesChanged' │           [ 'delegate: arcd_test1', 'previousBalance: 12000000000000000000', 'newBalance: 0' ]           │ '0xa3deb2ab206952d10696a41fd46f542589e56b6b366c24f469883006044288a4' │  151   │
+│   60    │  'arcd_test2'  │ 'DelegateVotesChanged' │           [ 'delegate: arcd_test2', 'previousBalance: 0', 'newBalance: 12000000000000000000' ]           │ '0xa3deb2ab206952d10696a41fd46f542589e56b6b366c24f469883006044288a4' │  152   │
+│   61    │  'arcd_test2'  │       'Transfer'       │                 [ 'from: null address', 'to: arcd_test2', 'value: 5000000000000000000' ]                 │ '0x7f981f680753b834e13a0736813bbf7b51887bdcf4a196f76cdde020499245b2' │  153   │
+│   62    │  'arcd_test2'  │ 'DelegateVotesChanged' │  [ 'delegate: arcd_test1', 'previousBalance: 2000000000000000000', 'newBalance: 7000000000000000000' ]   │ '0x7f981f680753b834e13a0736813bbf7b51887bdcf4a196f76cdde020499245b2' │  154   │
+│   63    │  'arcd_test2'  │       'Transfer'       │                 [ 'from: null address', 'to: arcd_test2', 'value: 5000000000000000000' ]                 │ '0x02063e259d5663ab2209875a85e9c1a2813850dfed56201805c2d3da96fb6d5a' │  188   │
+│   64    │  'arcd_test2'  │ 'DelegateVotesChanged' │ [ 'delegate: arcd_test2', 'previousBalance: 12000000000000000000', 'newBalance: 17000000000000000000' ]  │ '0x02063e259d5663ab2209875a85e9c1a2813850dfed56201805c2d3da96fb6d5a' │  189   │
+│   65    │  'arcd_test2'  │       'Transfer'       │                 [ 'from: null address', 'to: arcd_test2', 'value: 5000000000000000000' ]                 │ '0x684becfef03e9bedb624261e65add8e6f454214c99c4ba8be197b09fb4339896' │  234   │
+│   66    │  'arcd_test2'  │ 'DelegateVotesChanged' │ [ 'delegate: arcd_test2', 'previousBalance: 17000000000000000000', 'newBalance: 22000000000000000000' ]  │ '0x684becfef03e9bedb624261e65add8e6f454214c99c4ba8be197b09fb4339896' │  235   │
+│   67    │  'arcd_test2'  │       'Transfer'       │                 [ 'from: null address', 'to: arcd_test2', 'value: 5000000000000000000' ]                 │ '0x150a923b675001a5175fc32a988d2f4d053f70e125c6b12e3de0eab95133d9eb' │  249   │
+│   68    │  'arcd_test2'  │ 'DelegateVotesChanged' │  [ 'delegate: arcd_test1', 'previousBalance: 7000000000000000000', 'newBalance: 12000000000000000000' ]  │ '0x150a923b675001a5175fc32a988d2f4d053f70e125c6b12e3de0eab95133d9eb' │  250   │
+└─────────┴────────────────┴────────────────────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────┴────────┘
