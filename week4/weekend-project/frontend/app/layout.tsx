@@ -1,8 +1,9 @@
 "use client";
 import { WagmiConfig, createConfig } from "wagmi";
+import { sepolia } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import Navbar from "@/components/instructionsComponent/navigation/navbar";
-import Footer from "@/components/instructionsComponent/navigation/footer";
+import Vote from "@/components/instructionsComponent/vote";
 
 const config = createConfig(
   getDefaultConfig({
@@ -12,6 +13,9 @@ const config = createConfig(
 
     // Required
     appName: "You Create Web3 Dapp",
+
+    // Chains
+    chains: [sepolia],
 
     // Optional
     appDescription: "Your App Description",
@@ -30,11 +34,18 @@ export default function RootLayout({
       <WagmiConfig config={config}>
         <ConnectKitProvider mode="dark">
           <body>
-            <div style={{ display: "flex", flexDirection: "column", minHeight: "105vh" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                minHeight: "100vh",
+                height: "100%",
+              }}
+            >
               <Navbar />
-              <div style={{flexGrow: 1}}>{children}</div>
-              <Footer />
+              <div style={{ height: "100%" }}>{children}</div>
             </div>
+            <Vote />
           </body>
         </ConnectKitProvider>
       </WagmiConfig>
