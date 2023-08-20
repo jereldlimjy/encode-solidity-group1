@@ -5,6 +5,7 @@ import styles from "./vote.module.css";
 import { ethers } from "ethers";
 import { useAccount, useContractWrite } from "wagmi";
 import * as tokenizedBallotJson from "./TokenizedBallot.json";
+import * as voteTokenJson from "./VoteToken.json";
 
 export default function Vote() {
   const { address, isDisconnected } = useAccount();
@@ -42,7 +43,11 @@ export default function Vote() {
         isDisconnected={isDisconnected}
         contractAddress={tokenizedBallotAddress}
       />
-      <DelegateVotes />
+      <DelegateVotes
+        address={address}
+        isDisconnected={isDisconnected}
+        contractAddress={"0xf4b552EFdE4a1813C3AF9a8129a6DB596E509A72"}
+      />
       <MintTokens />
     </div>
   );
@@ -192,7 +197,6 @@ function TokenBalanceFromApi() {
     fetch(`http://localhost:3001/get-vote-token-balance/${address}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log("RAW API RESPONSE:", data);
         setData(data);
         setLoading(false);
       })
@@ -213,8 +217,53 @@ function TokenBalanceFromApi() {
   );
 }
 
-function DelegateVotes() {
-  return <h1>Delegate Votes</h1>;
+function DelegateVotes({
+  address,
+  isDisconnected,
+  contractAddress,
+}: {
+  address: string | undefined;
+  isDisconnected: boolean;
+  contractAddress: string | undefined;
+}) {
+  const [delegateeAddress, setDelegateeAddress] = useState<string>("");
+
+  const { data, isLoading, isSuccess, write } = useContractWrite({
+    address: contractAddress as `0x${string}`,
+    abi: voteTokenJson.abi,
+    functionName: "delegate",
+    args: [delegateeAddress],
+  });
+
+  const handleChange = (event: any) => {
+    setDelegateeAddress(event.target.value);
+  };
+
+  const handleClick = async () => {
+    if (!contractAddress || !address || isDisconnected) return;
+    write();
+  };
+
+  return (
+    <div className={styles.castVotesContainer}>
+      <h1 className={styles.title}>Delegate Votes</h1>
+
+      <input
+        className={styles.numberInput}
+        type="text"
+        onChange={handleChange}
+        value={delegateeAddress}
+        placeholder="Enter Delegatee Address"
+      />
+
+      <button className={styles.button} onClick={handleClick}>
+        Delegate
+      </button>
+
+      {isLoading && <span>Delegating votes...</span>}
+      {isSuccess && <span>Successfully delegated votes!</span>}
+    </div>
+  );
 }
 
 function MintTokens() {
