@@ -6,7 +6,7 @@ import * as tokenizedBallotJson from './assets/TokenizedBallot.json';
 const VOTE_TOKEN_CONTRACT_ADDRESS =
   '0xf4b552EFdE4a1813C3AF9a8129a6DB596E509A72';
 const TOKENIZED_BALLOT_CONTRACT_ADDRESS =
-  '0x706A384853570AF0a5624C4AA157750570288D1C';
+  '0x47E0EBB620309C7c6f0202e22e49C428F04510f1';
 
 @Injectable()
 export class AppService {
@@ -35,12 +35,8 @@ export class AppService {
     );
   }
 
-  getHello(): string {
-    return 'Hello World!';
-  }
-
-  getVoteTokenContractAddress(): string {
-    return VOTE_TOKEN_CONTRACT_ADDRESS;
+  getVoteTokenContractAddress(): any {
+    return { address: VOTE_TOKEN_CONTRACT_ADDRESS };
   }
 
   getTokenizedBallotContractAddress(): { address: string } {
@@ -66,5 +62,20 @@ export class AppService {
     }
 
     return { result: proposals };
+  }
+
+  getVoteTokenBalance(address: string) {
+    return this.voteTokenContract.balanceOf(address);
+  }
+
+  async mintTokens(address: string): Promise<any> {
+    console.log('Minting tx to ' + address);
+    const tx = await this.voteTokenContract.mint(
+      address,
+      ethers.parseUnits('1'),
+    );
+    const receipt = await tx.wait();
+    console.log({ receipt });
+    return { success: true, txHash: receipt.hash };
   }
 }

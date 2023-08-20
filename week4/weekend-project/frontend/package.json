@@ -19,7 +19,7 @@
     "ethers": "^6.7.1",
     "fs": "^0.0.1-security",
     "lokijs": "^1.5.12",
-    "next": "13.4.4",
+    "next": "^13.4.19",
     "pino-pretty": "^10.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

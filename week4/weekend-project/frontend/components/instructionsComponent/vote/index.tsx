@@ -56,7 +56,7 @@ function Table({
   proposals: Array<{ name: string; voteCount: string }>;
 }) {
   if (loading) return <h2>Loading...</h2>;
-  if (!proposals) return <h2>No results available :(</h2>;
+  if (!proposals) return <h2>No results available :</h2>;
 
   return (
     <div>
@@ -158,10 +158,115 @@ function CastVotes({
   );
 }
 
+function TokenAddressFromApi() {
+  const [data, setData] = useState<any>(null);
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/get-vote-token-contract-address")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (isLoading) return <p>Loading voting token address from API...</p>;
+  if (!data) return <p>No answer from API</p>;
+
+  return (
+    <div>
+      <p>Voting Token address: {data.address}</p>
+    </div>
+  );
+}
+
+function TokenBalanceFromApi() {
+  const { address } = useAccount();
+  const [data, setData] = useState<any>(null);
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!address) return;
+
+    fetch(`http://localhost:3001/get-vote-token-balance/${address}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("RAW API RESPONSE:", data);
+        setData(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
+  }, [address]);
+
+  if (isLoading) return <p>Loading token balance from API...</p>;
+  if (!data) return <p>No answer from API</p>;
+
+  const formattedBalance = ethers.formatUnits(data.toString(), 18); //convert to 1 decilmal
+
+  return (
+    <div>
+      <p>Your Token Balance: {formattedBalance} VTK</p>
+    </div>
+  );
+}
+
 function DelegateVotes() {
   return <h1>Delegate Votes</h1>;
 }
 
 function MintTokens() {
-  return <h1>Mint Tokens</h1>;
+  const { address } = useAccount();
+
+  return (
+    <div className={styles.castVotesContainer}>
+      <h1>Mint Tokens</h1>
+      <TokenAddressFromApi />
+      <TokenBalanceFromApi />
+      {address ? (
+        <RequestTokens address={address}></RequestTokens>
+      ) : (
+        <p>no address available</p>
+      )}
+    </div>
+  );
+}
+
+function RequestTokens(params: { address: `0x${string}` }) {
+  const [data, setData] = useState<any>(null);
+  const [isLoading, setLoading] = useState(false);
+
+  if (isLoading) return <p>Requesting tokens from API...</p>;
+
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ address: params.address }),
+  };
+  if (!data)
+    return (
+      <button
+        className={styles.button}
+        disabled={isLoading}
+        onClick={() => {
+          setLoading(true);
+          fetch("http://localhost:3001/mint-tokens", requestOptions)
+            .then((res) => res.json())
+            .then((data) => {
+              setData(data);
+              setLoading(false);
+            });
+        }}
+      >
+        Mint Tokens
+      </button>
+    );
+  return (
+    <div>
+      <p>Mint Status: {data.success ? "success" : "failed"}</p>
+      <p>Transaction hash: {data.txHash}</p>
+    </div>
+  );
 }
