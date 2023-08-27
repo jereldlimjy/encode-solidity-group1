@@ -15,6 +15,7 @@ import CloseBetsComponent from "./closeBetsComponent";
 import OpenBetsComponent from "./openBetsComponent";
 import AllowanceComponent from "./allowanceComponent";
 import BetComponent from "./betComponent";
+import FetchPrizeComponent from "./fetchPrizeComponent";
 
 export default function InstructionsComponent() {
   return (
@@ -43,6 +44,7 @@ function PageBody() {
       <CloseBetsComponent></CloseBetsComponent>
       <AllowanceComponent></AllowanceComponent>
       <BetComponent></BetComponent>
+      <FetchPrizeComponent></FetchPrizeComponent>
     </div>
   );
 }
