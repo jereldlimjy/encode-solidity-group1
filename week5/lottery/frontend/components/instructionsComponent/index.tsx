@@ -11,6 +11,10 @@ import { useEffect, useMemo, useState } from "react";
 import * as lotteryJson from "./Lottery.json";
 import * as lotteryTokenJson from "./LotteryToken.json";
 import { parseEther } from "viem";
+import CloseBetsComponent from "./closeBetsComponent";
+import OpenBetsComponent from "./openBetsComponent";
+import AllowanceComponent from "./allowanceComponent";
+import BetComponent from "./betComponent";
 
 export default function InstructionsComponent() {
   return (
@@ -36,6 +40,9 @@ function PageBody() {
       <LotteryInfo></LotteryInfo>
       <PurchaseToken></PurchaseToken>
       <OpenBetsComponent></OpenBetsComponent>
+      <CloseBetsComponent></CloseBetsComponent>
+      <AllowanceComponent></AllowanceComponent>
+      <BetComponent></BetComponent>
     </div>
   );
 }
@@ -235,53 +242,4 @@ function useBlock() {
   }, [client]);
 
   return block;
-}
-
-function OpenBetsComponent() {
-  const { write, isLoading, isSuccess, data, isError, error } =
-    useContractWrite({
-      address: "0xe64fdD883F2a39cAC2211671a34E216eAaCB2E34",
-      abi: lotteryJson.abi,
-      functionName: "openBets",
-    });
-
-  const blockDetails = useBlock();
-  const currentTimestamp = blockDetails?.timestamp;
-
-  const [duration, setDuration] = useState("");
-
-  const handleOpenBets = async () => {
-    if (currentTimestamp) {
-      try {
-        const finalValue = Number(currentTimestamp) + Number(duration);
-        write({ args: [finalValue] });
-      } catch (err) {
-        console.error("Error opening bets:", err);
-      }
-    }
-  };
-
-  return (
-    <div>
-      <input
-        className={styles.numberInput}
-        type="text"
-        value={duration}
-        onChange={(e) => setDuration(e.target.value)}
-        placeholder="Enter duration"
-      />
-      <button
-        className={styles.button}
-        disabled={isLoading}
-        onClick={handleOpenBets}
-      >
-        Open Bets
-      </button>
-      {isLoading && (
-        <div>Transaction is being processed. Check your wallet.</div>
-      )}
-      {isSuccess && <div>Transaction Successful: {JSON.stringify(data)}</div>}
-      {isError && <div>Error: {error?.message || "An error occurred"}</div>}
-    </div>
-  );
 }
