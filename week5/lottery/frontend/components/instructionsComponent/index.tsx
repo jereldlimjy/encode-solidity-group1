@@ -3,18 +3,14 @@ import {
   useAccount,
   useBalance,
   useContractRead,
-  useNetwork,
-  usePrepareContractWrite,
   useContractWrite,
-  useWaitForTransaction,
   useBlockNumber,
   usePublicClient,
 } from "wagmi";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import * as lotteryJson from "./Lottery.json";
 import * as lotteryTokenJson from "./LotteryToken.json";
-import { ethers } from "ethers";
-import { etherUnits, parseEther } from "viem";
+import { parseEther } from "viem";
 
 export default function InstructionsComponent() {
   return (
@@ -88,7 +84,13 @@ function LotteryState() {
     functionName: "betsOpen",
   });
 
-  const lotteryState = lotteryStateResponse.data ? "open" : "closed";
+  const lotteryState = useMemo(() => {
+    if (lotteryStateResponse.data) {
+      return <span className={styles.open}>open</span>;
+    } else {
+      return <span className={styles.closed}>closed</span>;
+    }
+  }, [lotteryStateResponse.data]);
 
   // Fetch the lottery's closing time
   const closingTimeResponse = useContractRead({
@@ -199,7 +201,11 @@ function PurchaseToken() {
 
   return (
     <div>
-      <button disabled={isLoading} onClick={handlePurchase}>
+      <button
+        className={styles.button}
+        disabled={isLoading}
+        onClick={handlePurchase}
+      >
         Purchase Tokens
       </button>
       {isLoading && (
@@ -258,12 +264,17 @@ function OpenBetsComponent() {
   return (
     <div>
       <input
+        className={styles.numberInput}
         type="text"
         value={duration}
         onChange={(e) => setDuration(e.target.value)}
         placeholder="Enter duration"
       />
-      <button disabled={isLoading} onClick={handleOpenBets}>
+      <button
+        className={styles.button}
+        disabled={isLoading}
+        onClick={handleOpenBets}
+      >
         Open Bets
       </button>
       {isLoading && (
