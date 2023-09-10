@@ -13,10 +13,10 @@ module.exports = {
       colors: {
         blue: "#48cbd9",
         "neon-blue": "#79e7e7",
-        purple: "#37367b",
+        purple: "#9980ec",
+        "dark-purple": "#8973d4",
         grey: "#f5f5f5",
         slate: "#475569",
-        "grey-purple": "#716b94",
       },
     },
   },
