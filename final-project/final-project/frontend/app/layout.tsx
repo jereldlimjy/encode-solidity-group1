@@ -1,8 +1,9 @@
 "use client";
 import { WagmiConfig, createConfig } from "wagmi";
+import { sepolia } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
-import Navbar from "@/components/instructionsComponent/navigation/navbar";
-import Footer from "@/components/instructionsComponent/navigation/footer";
+import Navbar from "@/components/navigation/navbar";
+import Footer from "@/components/navigation/footer";
 
 const config = createConfig(
   getDefaultConfig({
@@ -12,6 +13,9 @@ const config = createConfig(
 
     // Required
     appName: "You Create Web3 Dapp",
+
+    // Chains
+    chains: [sepolia],
 
     // Optional
     appDescription: "Your App Description",
@@ -29,10 +33,17 @@ export default function RootLayout({
     <html lang="en">
       <WagmiConfig config={config}>
         <ConnectKitProvider mode="dark">
-          <body>
-            <div style={{ display: "flex", flexDirection: "column", minHeight: "105vh" }}>
+          <body className="bg-grey">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                minHeight: "100vh",
+                height: "100%",
+              }}
+            >
               <Navbar />
-              <div style={{flexGrow: 1}}>{children}</div>
+              <div style={{ flexGrow: 1 }}>{children}</div>
               <Footer />
             </div>
           </body>
