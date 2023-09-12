@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import pinataSDK from "@pinata/sdk";
-import { useAccount, useContractWrite } from "wagmi";
-import * as etherBoardJson from "./EtherBoard.json";
+import { useAccount, useContractWrite, useContractRead } from "wagmi";
+import * as etherBoardV2Json from "./EtherBoardV2.json";
+import OwnedNFTs from "./ownedNFTs";
 
 export default function Board() {
   const [message, setMessage] = useState<string>("");
@@ -13,11 +14,11 @@ export default function Board() {
   const PINATA_API_KEY = process.env.NEXT_PUBLIC_PINATA_API_KEY;
   const PINATA_API_SECRET = process.env.NEXT_PUBLIC_PINATA_API_SECRET;
   const pinata = new pinataSDK(PINATA_API_KEY, PINATA_API_SECRET);
-  const ETHERBOARD_ADDRESS = "0x51D1a7B8Cf3523E83C78d2f10F63eB855Fa8Eb5a";
+  const ETHERBOARD_ADDRESS = "0xa1181e7eeA73969d87E53A144C9d519453f8921C";
 
   const { write, isLoading, isSuccess, data } = useContractWrite({
     address: ETHERBOARD_ADDRESS,
-    abi: etherBoardJson.abi,
+    abi: etherBoardV2Json.abi,
     functionName: "safeMint",
   });
 
@@ -69,6 +70,7 @@ export default function Board() {
       {isLoading && <div>Minting...</div>}
       {isSuccess && <div>Minted successfully: {JSON.stringify(data)}</div>}
       <hr className="border-1 rounded my-8 border-blue" />
+      <OwnedNFTs />
     </div>
   );
 }
