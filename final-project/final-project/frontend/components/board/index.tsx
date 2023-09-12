@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import pinataSDK from "@pinata/sdk";
-import { useAccount, useContractWrite, useContractRead } from "wagmi";
+import { useAccount, useContractWrite } from "wagmi";
 import * as etherBoardV2Json from "./EtherBoardV2.json";
-import OwnedNFTs from "./ownedNFTs";
 
 export default function Board() {
   const [message, setMessage] = useState<string>("");
@@ -70,7 +69,6 @@ export default function Board() {
       {isLoading && <div>Minting...</div>}
       {isSuccess && <div>Minted successfully: {JSON.stringify(data)}</div>}
       <hr className="border-1 rounded my-8 border-blue" />
-      <OwnedNFTs />
     </div>
   );
 }
