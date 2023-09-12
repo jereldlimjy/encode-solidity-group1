@@ -3,17 +3,35 @@ import pinataSDK from "@pinata/sdk";
 import { useAccount, useContractWrite } from "wagmi";
 import * as etherBoardV2Json from "./EtherBoardV2.json";
 
+interface NFT {
+  id: string;
+  message: string;
+}
+
 export default function Board() {
   const [message, setMessage] = useState<string>("");
   const [cid, setCid] = useState<string | null>(null);
   const [ipfsstatusMessage, setipfsStatusMessage] = useState<string | null>(
     null
   );
+  const [NFTs, setNFTs] = useState<NFT[]>([]);
   const { address } = useAccount();
   const PINATA_API_KEY = process.env.NEXT_PUBLIC_PINATA_API_KEY;
   const PINATA_API_SECRET = process.env.NEXT_PUBLIC_PINATA_API_SECRET;
   const pinata = new pinataSDK(PINATA_API_KEY, PINATA_API_SECRET);
   const ETHERBOARD_ADDRESS = "0xa1181e7eeA73969d87E53A144C9d519453f8921C";
+
+  useEffect(() => {
+    const getNFTs = async () => {
+      try {
+        const res = await fetch("http://localhost:3001/get-nfts");
+        const NFTs = await res.json();
+        setNFTs(NFTs);
+      } catch (err) {}
+    };
+
+    getNFTs();
+  });
 
   const { write, isLoading, isSuccess, data } = useContractWrite({
     address: ETHERBOARD_ADDRESS,
