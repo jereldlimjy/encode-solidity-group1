@@ -11,7 +11,7 @@ interface NFT {
 export default function Board() {
   const [message, setMessage] = useState<string>("");
   const [cid, setCid] = useState<string | null>(null);
-  const [ipfsstatusMessage, setipfsStatusMessage] = useState<string | null>(
+  const [ipfsstatusMessage, setIpfsStatusMessage] = useState<string | null>(
     null
   );
   const [NFTs, setNFTs] = useState<NFT[]>([]);
@@ -40,7 +40,7 @@ export default function Board() {
   });
 
   async function handleMint() {
-    setipfsStatusMessage("Uploading to IPFS...");
+    setIpfsStatusMessage("Uploading to IPFS...");
 
     const metadata = {
       message: message,
@@ -48,7 +48,7 @@ export default function Board() {
 
     try {
       const result = await pinata.pinJSONToIPFS(metadata);
-      setipfsStatusMessage(
+      setIpfsStatusMessage(
         `Successfully uploaded to IPFS with CID: ${result.IpfsHash}`
       );
       setCid(result.IpfsHash);
@@ -64,6 +64,7 @@ export default function Board() {
       });
     } catch (error) {
       console.error("Error:", error);
+      setIpfsStatusMessage("An error occurred, please try again!");
     }
   }
 
@@ -86,7 +87,11 @@ export default function Board() {
       <div className="mt-2 text-gray-600">{ipfsstatusMessage}</div>
       {isLoading && <div>Minting...</div>}
       {isSuccess && <div>Minted successfully: {JSON.stringify(data)}</div>}
+
       <hr className="border-1 rounded my-8 border-blue" />
+
+      {/* board */}
+      <div className=""></div>
     </div>
   );
 }
