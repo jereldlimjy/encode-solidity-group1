@@ -14,6 +14,9 @@ export default function Board() {
     null
   );
   const [NFTs, setNFTs] = useState<NFT[]>([]);
+  const [showMyNFTs, setShowMyNFTs] = useState(() => {
+    return localStorage.getItem("showMyNFTs") === "true";
+  });
   const [isFetchingNFTs, setIsFetchingNFTs] = useState<boolean>(true);
   const [isMinting, setIsMinting] = useState<boolean>(false);
   const { address } = useAccount();
@@ -23,20 +26,30 @@ export default function Board() {
   const ETHERBOARD_ADDRESS = "0xa1181e7eeA73969d87E53A144C9d519453f8921C";
 
   useEffect(() => {
+    localStorage.setItem("showMyNFTs", showMyNFTs.toString());
+  }, [showMyNFTs]);
+
+  useEffect(() => {
     const getNFTs = async () => {
+      setIsFetchingNFTs(true);
+      let apiEndpoint = "http://localhost:3001/get-nfts";
+      if (showMyNFTs && address) {
+        apiEndpoint += `-by-owner?address=${address}`;
+      }
+
       try {
-        setIsFetchingNFTs(true);
-        const res = await fetch("http://localhost:3001/get-nfts");
+        const res = await fetch(apiEndpoint);
         const NFTs = await res.json();
         setNFTs(NFTs);
       } catch (err) {
+        console.error("Error fetching NFTs:", err);
       } finally {
         setIsFetchingNFTs(false);
       }
     };
 
     getNFTs();
-  }, []);
+  }, [showMyNFTs, address]);
 
   const { write, isLoading, isSuccess, data } = useContractWrite({
     address: ETHERBOARD_ADDRESS,
@@ -99,6 +112,16 @@ export default function Board() {
       )}
 
       <hr className="border-1 rounded my-8 border-blue" />
+
+      <label className="inline-flex items-center mt-3">
+        <input
+          type="checkbox"
+          className="form-checkbox h-5 w-5 text-blue-600"
+          checked={showMyNFTs}
+          onChange={(e) => setShowMyNFTs(e.target.checked)}
+        />
+        <span className="ml-2 text-gray-700">Show only my NFTs</span>
+      </label>
 
       {/* board */}
       <div className="bg-slate-light border-4 border-neon-blue rounded-md h-[500px] min-w-full p-4 overflow-y-auto">

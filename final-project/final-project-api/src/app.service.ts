@@ -45,4 +45,31 @@ export class AppService {
       return [];
     }
   }
+
+  async getNFTsByOwner(ownerAddress: string): Promise<any[]> {
+    try {
+      const nftCount = await this.etherboardContract.balanceOf(ownerAddress);
+      const nftCountNum = parseInt(nftCount.toString());
+      const nfts = [];
+
+      for (let i = 0; i < nftCountNum; i++) {
+        const tokenId = await this.etherboardContract.tokenOfOwnerByIndex(
+          ownerAddress,
+          i,
+        );
+        const message =
+          await this.etherboardContract.getMessageByTokenId(tokenId);
+
+        nfts.push({
+          id: tokenId.toString(),
+          message,
+        });
+      }
+
+      return nfts;
+    } catch (err) {
+      console.error(err);
+      return [];
+    }
+  }
 }
